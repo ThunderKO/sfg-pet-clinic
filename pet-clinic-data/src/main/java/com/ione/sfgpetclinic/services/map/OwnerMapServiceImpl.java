@@ -1,11 +1,11 @@
 package com.ione.sfgpetclinic.services.map;
 
 import com.ione.sfgpetclinic.model.Owner;
-import com.ione.sfgpetclinic.services.CrudService;
+import com.ione.sfgpetclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerMapServiceImpl extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerMapServiceImpl extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -29,5 +29,10 @@ public class OwnerMapServiceImpl extends AbstractMapService<Owner, Long> impleme
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

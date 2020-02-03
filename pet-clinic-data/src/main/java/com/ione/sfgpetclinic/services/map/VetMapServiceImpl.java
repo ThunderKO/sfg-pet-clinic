@@ -1,11 +1,11 @@
 package com.ione.sfgpetclinic.services.map;
 
 import com.ione.sfgpetclinic.model.Vet;
-import com.ione.sfgpetclinic.services.CrudService;
+import com.ione.sfgpetclinic.services.VetService;
 
 import java.util.Set;
 
-public class VetMapServiceImpl extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetMapServiceImpl extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
