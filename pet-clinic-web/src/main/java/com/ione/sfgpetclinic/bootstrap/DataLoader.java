@@ -1,6 +1,7 @@
 package com.ione.sfgpetclinic.bootstrap;
 
 import com.ione.sfgpetclinic.model.Owner;
+import com.ione.sfgpetclinic.model.Pet;
 import com.ione.sfgpetclinic.model.PetType;
 import com.ione.sfgpetclinic.model.Vet;
 import com.ione.sfgpetclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import com.ione.sfgpetclinic.services.PetTypeService;
 import com.ione.sfgpetclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -36,12 +39,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Louis");
         owner1.setLastName("Vuitton");
+        owner1.setAddress("HK Island");
+        owner1.setCity("Hong Kong");
+        owner1.setTelephone("9250 1254");
+
+        Pet louisPet = new Pet();
+        louisPet.setPetType(savedDogPetType);
+        louisPet.setOwner(owner1);
+        louisPet.setBirthDate(LocalDate.now());
+        louisPet.setName("Golden");
+        owner1.getPets().add(louisPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Gucci");
         owner2.setLastName("Gang");
+        owner2.setAddress("New Territories");
+        owner2.setCity("Hong Kong");
+        owner2.setTelephone("5219 0295");
+
+        Pet gucciPet = new Pet();
+        gucciPet.setPetType(savedCatPetType);
+        gucciPet.setOwner(owner2);
+        gucciPet.setBirthDate(LocalDate.now());
+        gucciPet.setName("Darken");
+        owner2.getPets().add(gucciPet);
 
         ownerService.save(owner2);
 
