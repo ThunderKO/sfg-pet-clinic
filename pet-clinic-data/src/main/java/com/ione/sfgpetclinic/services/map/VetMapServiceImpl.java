@@ -1,6 +1,6 @@
 package com.ione.sfgpetclinic.services.map;
 
-import com.ione.sfgpetclinic.model.Speciality;
+import com.ione.sfgpetclinic.model.Specialty;
 import com.ione.sfgpetclinic.model.Vet;
 import com.ione.sfgpetclinic.services.SpecialtyService;
 import com.ione.sfgpetclinic.services.VetService;
@@ -32,8 +32,8 @@ public class VetMapServiceImpl extends AbstractMapService<Vet, Long> implements 
         if (object.getSpecialties().size() > 0) {
             object.getSpecialties().forEach(speciality -> {
                 if (speciality.getId() == null) {
-                    Speciality savedSpeciality = specialtyService.save(speciality);
-                    speciality.setId(savedSpeciality.getId());
+                    Specialty savedSpecialty = specialtyService.save(speciality);
+                    speciality.setId(savedSpecialty.getId());
                 }
             });
         }
